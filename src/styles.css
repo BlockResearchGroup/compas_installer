@@ -39,12 +39,19 @@ img{
     top: 52%;
 }
 
+#status{
+    position: absolute;
+    bottom: 15px;
+    left: 100px;
+}
 
 #progress{
-    width: 500px;
+    margin-top: 2px;
+    width: 600px;
     height: 15px;
     border: 1px solid white;
     position: relative;
+    border-radius: 5px;
 }
 
 #bar{
@@ -56,14 +63,18 @@ img{
 
 #install{
     margin: 0;
-    padding: 10px;
+    padding: 5px;
     /* border: 1px solid white; */
-    border-radius: 10px;
+    border-radius: 12px;
     -webkit-app-region: no-drag;
     cursor: pointer;
     background-color: white;
     color: #202020;
     width: 100px;
+    position: absolute;
+    bottom: 15px;
+    left: 350px;
+    text-align: center;
 }
 
 #install:hover{
