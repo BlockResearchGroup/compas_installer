@@ -1,7 +1,8 @@
 const { dialog, getCurrentWindow } = require('electron').remote
 const onezip = require('onezip');
 const path = require('path');
-const $ = require("./jquery-3.4.1.slim.min.js")
+const $ = require("./jquery-3.4.1.slim.min.js");
+const fs = require('fs');
 
 $("#install").click(install)
 $("#exit").click(()=>{
@@ -21,6 +22,14 @@ function install() {
 
     let abs_path = path.join(path.resolve(folder), "RV2")
     let src = path.join(__dirname, 'plugins', 'RV2_v1.0.0-beta2.zip');
+
+    if (fs.existsSync(abs_path)){
+        if (confirm(`Overwrite existing folder at ${abs_path}?`))
+            fs.rmdirSync(abs_path, { recursive: true })
+        else return
+    }
+    
+
     const extract = onezip.extract(src, abs_path);
 
     $("#install").hide()
