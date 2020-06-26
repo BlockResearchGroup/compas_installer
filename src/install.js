@@ -21,7 +21,7 @@ function install() {
     else return
 
     let abs_path = path.join(path.resolve(folder), "RV2")
-    let src = path.join(__dirname, 'plugins', 'RV2_v1.0.0-beta2.zip');
+    let src = path.join(__dirname, 'plugins', 'RV2_v1.0.0.zip');
 
     if (fs.existsSync(abs_path)){
         if (confirm(`Overwrite existing folder at ${abs_path}?`))
@@ -38,7 +38,7 @@ function install() {
     let status = $("#status span")
     let bar = $("#bar")
 
-    status.text('Installing at: ' + abs_path)
+    status.text('Starting Installation...')
 
     extract.on('start', (percent) => {
         console.log('extracting started');
@@ -47,7 +47,7 @@ function install() {
 
     extract.on('progress', (percent) => {
         console.log(percent)
-        status.text('Unzipping: ' + percent + '%')
+        status.text(`Unzipping to ${abs_path}: ${percent} %`)
         if (percent > 98) percent = 98
         bar.css({ "width": percent + '%' })
     });

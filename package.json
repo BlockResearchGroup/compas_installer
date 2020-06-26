@@ -5,17 +5,20 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --win portable"
+    "build": "electron-builder --win"
   },
   "author": "Li Chen",
   "license": "MIT",
   "devDependencies": {
     "electron": "^8.1.1",
-    "electron-builder": "^22.7.0",
-    "electron-packager": "^14.2.1",
-    "zip-folder": "^1.0.0"
+    "electron-builder": "^22.7.0"
   },
   "dependencies": {
     "onezip": "^4.2.0"
+  },
+  "build":{
+    "asar":false,
+    "productName": "RhinoVault2",
+    "copyright": "Copyright © 2009-2020 Block Research Group, ETH Zurich, Switzerland."
   }
 }
