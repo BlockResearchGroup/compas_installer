@@ -23,6 +23,11 @@ function install() {
     let abs_path = path.join(path.resolve(folder), "RV2")
     let src = path.join(__dirname, 'plugins', 'RV2_v1.0.0.zip');
 
+    if (abs_path.includes(" ")){
+        alert("The installation path cannot contain spaces, please choose another location")
+        return
+    }
+
     if (fs.existsSync(abs_path)){
         if (confirm(`Overwrite existing folder at ${abs_path}?`))
             fs.rmdirSync(abs_path, { recursive: true })
@@ -54,6 +59,7 @@ function install() {
 
     extract.on('error', (error) => {
         console.error(error);
+        alert(error);
     });
 
     extract.on('end', () => {
