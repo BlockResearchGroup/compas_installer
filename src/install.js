@@ -21,7 +21,7 @@ function install() {
     else return
 
     let abs_path = path.join(path.resolve(folder), "RV2")
-    let src = path.join(__dirname, 'plugins', 'RV2_v1.0.0.zip');
+    let src = path.join(__dirname, 'plugins', 'RV2.zip');
 
     if (abs_path.includes(" ")){
         alert("The installation path cannot contain spaces, please choose another location")

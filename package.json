@@ -1,6 +1,6 @@
 {
   "name": "compas_installer",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
