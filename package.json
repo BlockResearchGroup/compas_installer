@@ -18,7 +18,7 @@
   },
   "build":{
     "asar":false,
-    "productName": "RhinoVault2",
+    "productName": "COMPAS_AGS",
     "copyright": "Copyright © 2009-2020 Block Research Group, ETH Zurich, Switzerland."
   }
 }
