@@ -10,7 +10,7 @@
   "author": "Block Research Group",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^8.1.1",
+    "electron": "^8.5.2",
     "electron-builder": "^22.7.0"
   },
   "dependencies": {
