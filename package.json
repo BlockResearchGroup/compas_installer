@@ -18,7 +18,7 @@
   },
   "build":{
     "asar":false,
-    "productName": "COMPAS_AGS",
+    "productName": "rhinoGS",
     "copyright": "Copyright © 2009-2020 Block Research Group, ETH Zurich, Switzerland."
   }
 }

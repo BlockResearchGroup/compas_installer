@@ -20,8 +20,8 @@ function install() {
     if (folder) folder = folder[0]
     else return
 
-    let abs_path = path.join(path.resolve(folder), "COMPAS_AGS")
-    let src = path.join(__dirname, 'plugins', 'AGS_v1.0.0.zip');
+    let abs_path = path.join(path.resolve(folder), "rhinoGS")
+    let src = path.join(__dirname, 'plugins', 'AGS.zip');
 
     if (abs_path.includes(" ")){
         alert("The installation path cannot contain spaces, please choose another location")
