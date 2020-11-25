@@ -20,8 +20,8 @@ function install() {
     if (folder) folder = folder[0]
     else return
 
-    let abs_path = path.join(path.resolve(folder), "rhinoGS")
-    let src = path.join(__dirname, 'plugins', 'AGS.zip');
+    let abs_path = path.join(path.resolve(folder), "rhino3GS")
+    let src = path.join(__dirname, 'plugins', '3GS.zip');
 
     if (abs_path.includes(" ")){
         alert("The installation path cannot contain spaces, please choose another location")
