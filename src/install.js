@@ -67,7 +67,7 @@ function install() {
         console.log('done');
 
         const { shell } = require('electron').remote
-        shell.openItem(abs_path + "/dev/install.bat")
+        shell.openItem(abs_path + "/install.bat")
     });
 
 
