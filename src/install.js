@@ -3,6 +3,7 @@ const onezip = require('onezip');
 const path = require('path');
 const $ = require("./jquery-3.4.1.slim.min.js");
 const fs = require('fs');
+const spawn = require("child_process").spawn;
 
 $("#install").click(install)
 $("#exit").click(()=>{
@@ -11,9 +12,43 @@ $("#exit").click(()=>{
 })
 
 $("#status").hide()
+$("#console").hide()
 
+let status = $("#status span")
+let bar = $("#bar")
+
+function cmd(exe, args) {
+
+    $("#console").show()
+
+    let log = ""
+
+    let bat = spawn(exe, args);
+
+    bat.stdout.on("data", (data) => {
+        log += data
+        $("#console").text(log)
+    });
+
+    bat.stderr.on("data", (err) => {
+        log += err
+        $("#console").text(log)
+    });
+
+    bat.on("exit", (code) => {
+        console.log(log)
+        console.log("Exit code:",code)
+        if (code === 0)
+            status.text("Installation finished, window can be closed")
+        else
+            status.text("Installation failed")
+    });
+    
+}
 
 function install() {
+
+    let rhino_version = $( "#rhino_version option:selected" ).val();
 
     let folder = dialog.showOpenDialogSync({ properties: ['openDirectory'] })
 
@@ -38,10 +73,9 @@ function install() {
     const extract = onezip.extract(src, abs_path);
 
     $("#install").hide()
+    $("#for").hide()
+    $("#rhino_version").hide()
     $("#status").show()
-
-    let status = $("#status span")
-    let bar = $("#bar")
 
     status.text('Starting Installation...')
 
@@ -63,11 +97,8 @@ function install() {
     });
 
     extract.on('end', () => {
-        status.text('done')
-        console.log('done');
-
-        const { shell } = require('electron').remote
-        shell.openItem(abs_path + "/install.bat")
+        status.text("Installing to Rhino...")
+        cmd(abs_path+"/env/python.exe", ["-m", "compas_rv2.install", "--rhino_version", rhino_version])
     });
 
 

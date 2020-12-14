@@ -73,7 +73,34 @@ img{
     width: 100px;
     position: absolute;
     bottom: 15px;
-    left: 350px;
+    left: 290px;
+    text-align: center;
+}
+
+#for{
+    margin: 0;
+    /* background-color: white; */
+    color: white;
+    position: absolute;
+    width: 30px;
+    bottom: 25px;
+    left: 400px;
+    text-align: center;
+}
+
+#rhino_version{
+    margin: 0;
+    padding: 5px;
+    /* border: 1px solid white; */
+    border-radius: 12px;
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+    background-color: white;
+    color: #202020;
+    width: 80px;
+    position: absolute;
+    bottom: 15px;
+    left: 430px;
     text-align: center;
 }
 
@@ -95,4 +122,17 @@ img{
 
 #exit:hover{
     background-color: gray;
+}
+
+#console{
+    position: absolute;
+    margin: 20px;
+    width: 90%;
+    top: 0px;
+    bottom: 30px;
+    -webkit-app-region: no-drag;
+    border:1px solid #ccc;
+    overflow:auto;
+    background-color: black;
+    opacity: 0.9;
 }
